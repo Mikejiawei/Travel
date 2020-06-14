@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
+    <swiper :options="swiperOption" v-if="showSwiper">
+      <swiper-slide v-for="item of list" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl" />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -12,41 +12,45 @@
 <script>
 export default {
   name: "HomeSwiper",
+  props: {
+    list: Array
+  },
   data() {
     return {
       swiperOption: {
         pagination: ".swiper-pagination",
         loop: true
-      },
-      swiperList: [
-        {
-          id: "0001",
-          imgUrl:
-            "https://images.pexels.com/photos/1430677/pexels-photo-1430677.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        }
-      ]
+      }
     };
+  },
+  computed: {
+    showSwiper() {
+      return this.list.length;
+    }
   }
 };
 </script>
 
 <style lang="stylus" scoped>
-.wrapper >>> .swiper-pagination-bullets
-  bottom 20px
-  .swiper-pagination-bullet-active
-    background #fff
-.wrapper
-  overflow hidden
-  width 100%
-  height 0
-  padding-bottom 30%
-  background #eee
-  .swiper-img
-    height 2.5rem
-    width 100%
+// 样式穿透，改变幻灯片下方圆点
+.wrapper >>> .swiper-pagination-bullets {
+  bottom: 20px;
+
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  padding-bottom: 31.25%;
+  background: #eee;
+
+  .swiper-img {
+    height: 2.5rem;
+    width: 100%;
+  }
+}
 </style>
