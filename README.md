@@ -1,7 +1,13 @@
 # travel
+## 仿去哪儿网
 
-> A Vue.js project
-
+> 适合新人练手
+## 功能
++ 实现首页，城市搜索页，详情展示页
++ 运用了组件拆分，router，vuex全局状态管理，兄弟组件通信，VueAwesomeSwiper，动画，localStorage缓存，keep-alive等技术。
++ 响应式布局
++ 更多功能待完善
+LoL
 ## Build Setup
 
 ``` bash
