@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="search">
-      <input v-model="keyword" class="search-input" type="text" placeholder="请输入城市名或拼音" />
+      <input
+        v-model="keyword"
+        class="search-input"
+        type="text"
+        placeholder="请输入城市名或拼音"
+      />
     </div>
     <div class="search-content" ref="search" v-show="keyword">
       <ul>
@@ -10,8 +15,12 @@
           v-for="item of list"
           :key="item.id"
           @click="handleCityClick(item.name)"
-        >{{item.name}}</li>
-        <li class="search-item border-bottom" v-show="hasNoData">没有找到匹配城市</li>
+        >
+          {{ item.name }}
+        </li>
+        <li class="search-item border-bottom" v-show="hasNoData">
+          没有找到匹配城市
+        </li>
       </ul>
     </div>
   </div>
@@ -70,7 +79,7 @@ export default {
     ...mapMutations(["changeCity"])
   },
   mounted() {
-    this.scroll = new Bscroll(this.$refs.search);
+    this.scroll = new Bscroll(this.$refs.search, { click: true });
   }
 };
 </script>
