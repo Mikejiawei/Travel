@@ -76,7 +76,7 @@ export default {
 .list {
   overflow: hidden;
   position: absolute;
-  top: 1.66rem;
+  top: 1.72rem;
   left: 0;
   right: 0;
   bottom: 0;
