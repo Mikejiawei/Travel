@@ -1,4 +1,5 @@
 # travel
+[![Travel's github stats](https://github-readme-stats.vercel.app/api?username=Mikejiawei&show_icons=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 ## 仿去哪儿网
 
 > 适合新人练手
